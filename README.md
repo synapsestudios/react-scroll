@@ -1,11 +1,11 @@
 ## React Scroll
 
-Directive for basic scrolling and smooth scrolling ( work in progress )
-Feel free to contribute - everything is appreciated
+Directive for basic scrolling and smooth scrolling.
+Forked from https://github.com/fisshy/react-scroll to give us tighter control over npm and git release versions. We'll peridocially pull updates and will submit PRs for any bugfixes we find.
 
 ### Install
 ```js
-$ npm install react-scroll
+$ npm install synapse-scroll
 ```
 
 ### Run
@@ -25,7 +25,7 @@ Checkout examples
 ```js
 
 var React = require('react');
-var Scroll = require('react-scroll'); 
+var Scroll = require('synapse-scroll');
 
 var Link = Scroll.Link;
 var Element = Scroll.Element;
@@ -59,7 +59,7 @@ React.render(
 
 ```js
 var React = require('react');
-var Scroll = require('react-scroll'); 
+var Scroll = require('synapse-scroll');
 var Helpers = Scroll.Helpers;
 
 var Element = React.createClass({
