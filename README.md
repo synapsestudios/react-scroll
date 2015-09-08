@@ -5,7 +5,7 @@ Forked from https://github.com/fisshy/react-scroll to give us tighter control ov
 
 ### Install
 ```js
-$ npm install synapse-scroll
+$ npm install @synapsestudios/react-scroll
 ```
 
 ### Run
@@ -25,7 +25,7 @@ Checkout examples
 ```js
 
 var React = require('react');
-var Scroll = require('synapse-scroll');
+var Scroll = require('@synapsestudios/react-scroll');
 
 var Link = Scroll.Link;
 var Element = Scroll.Element;
@@ -59,7 +59,7 @@ React.render(
 
 ```js
 var React = require('react');
-var Scroll = require('synapse-scroll');
+var Scroll = require('@synapsestudios/react-scroll');
 var Helpers = Scroll.Helpers;
 
 var Element = React.createClass({

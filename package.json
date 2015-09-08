@@ -1,5 +1,5 @@
 {
-  "name": "synapse-scroll",
+  "name": "@synapsestudios/react-scroll",
   "version": "0.1.0",
   "description": "A scroll component for React.js",
   "main": "modules",
