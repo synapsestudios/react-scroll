@@ -67,12 +67,11 @@ var Helpers = {
 
           if(!element) {
               element = scroller.get(to);
-
-              var cords = element.getBoundingClientRect();
-              elemTopBound = (cords.top + y);
-              elemBottomBound = elemTopBound + cords.height;
           }
 
+          var cords = element.getBoundingClientRect();
+          elemTopBound = (cords.top + y);
+          elemBottomBound = elemTopBound + cords.height;
           var offsetY = y - this.props.offset;
           var isInside = (offsetY >= elemTopBound && offsetY <= elemBottomBound);
           var isOutside = (offsetY < elemTopBound || offsetY > elemBottomBound);
