@@ -12,8 +12,9 @@ var Element = React.createClass({
      */
 
     var className = this.props.className || "";
-    
+
     var props = assign({}, this.props, {
+      id: this.props.name,
       className: this.props.className
     });
 
