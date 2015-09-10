@@ -105,6 +105,9 @@ var Helpers = {
     componentDidMount: function() {
       var domNode = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
       scroller.register(this.props.name, domNode);
+      if (window.location.hash.substring(1) === this.props.name) {
+        scroller.scrollTo(this.props.name);
+      }
     },
     componentWillUnmount: function() {
       scroller.unregister(this.props.name);

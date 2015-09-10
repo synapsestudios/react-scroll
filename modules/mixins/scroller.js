@@ -59,7 +59,8 @@ module.exports = {
        */
 
       var options = {
-        duration : duration
+        duration : duration,
+        destinationHash : to
       };
 
       animateScroll.animateTopScroll(coordinates.top + (offset || 0), options);
