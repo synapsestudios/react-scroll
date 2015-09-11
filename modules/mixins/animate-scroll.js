@@ -38,7 +38,6 @@ var __targetPositionY   = 0;
 var __progress          = 0;
 var __duration          = 0;
 var __cancel            = false;
-var __destinationHash   = false;
 
 var __start;
 var __deltaTop;
@@ -72,8 +71,6 @@ var animateTopScroll = function(timestamp) {
 
   if(__percent < 1) {
     requestAnimationFrame(animateTopScroll);
-  } else if (__destinationHash){
-    window.location.hash = __destinationHash;
   }
 
 };
@@ -84,7 +81,6 @@ var startAnimateTopScroll = function(y, options) {
   __startPositionY  = currentPositionY();
   __targetPositionY = y + __startPositionY;
   __duration        = options.duration || 1000;
-  __destinationHash = options.destinationHash || false;
 
   requestAnimationFrame(animateTopScroll);
 };

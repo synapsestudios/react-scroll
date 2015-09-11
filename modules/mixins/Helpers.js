@@ -6,6 +6,8 @@ var animateScroll = require('./animate-scroll');
 var scrollSpy = require('./scroll-spy');
 var scroller = require('./scroller');
 
+var __deferredScrollDestination = '';
+
 var Helpers = {
 
   Scroll: {
@@ -105,8 +107,9 @@ var Helpers = {
     componentDidMount: function() {
       var domNode = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
       scroller.register(this.props.name, domNode);
-      if (window.location.hash.substring(1) === this.props.name) {
+      if (__deferredScrollDestination === this.props.name) {
         scroller.scrollTo(this.props.name);
+        __deferredScrollDestination = '';
       }
     },
     componentWillUnmount: function() {
