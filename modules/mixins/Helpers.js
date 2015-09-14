@@ -115,6 +115,12 @@ var Helpers = {
     componentWillUnmount: function() {
       scroller.unregister(this.props.name);
     }
+  },
+
+  DeferredScroll: {
+    deferredScrollTo: function(desination) {
+        __deferredScrollDestination = desination;
+    }
   }
 };
 
