@@ -117,7 +117,7 @@ var Helpers = {
     }
   },
 
-    DeferredScroll: {
+  DeferredScroll: {
     deferredScrollTo: function(desination) {
         __deferredScrollDestination = desination;
     }
