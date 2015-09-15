@@ -72,7 +72,7 @@ var Helpers = {
           }
 
           var cords = element.getBoundingClientRect();
-          elemTopBound = (cords.top + y);
+          elemTopBound = Math.round(cords.top + y);
           elemBottomBound = elemTopBound + cords.height;
           var offsetY = y - this.props.offset;
           var isInside = (offsetY >= elemTopBound && offsetY <= elemBottomBound);
