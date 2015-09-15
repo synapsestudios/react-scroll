@@ -108,8 +108,10 @@ var Helpers = {
       var domNode = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
       scroller.register(this.props.name, domNode);
       if (__deferredScrollDestination === this.props.name) {
-        scroller.scrollTo(this.props.name);
-        __deferredScrollDestination = '';
+        window.setTimeout(function(){
+            scroller.scrollTo(__deferredScrollDestination);
+            __deferredScrollDestination = '';
+        });
       }
     },
     componentWillUnmount: function() {
