@@ -7,6 +7,7 @@ var scrollSpy = require('./scroll-spy');
 var scroller = require('./scroller');
 
 var __deferredScrollDestination = '';
+var __deferredScrollOffset = 0;
 
 var Helpers = {
 
@@ -72,7 +73,7 @@ var Helpers = {
           }
 
           var cords = element.getBoundingClientRect();
-          elemTopBound = Math.round(cords.top + y);
+          elemTopBound = Math.floor(cords.top + y);
           elemBottomBound = elemTopBound + cords.height;
           var offsetY = y - this.props.offset;
           var isInside = (offsetY >= elemTopBound && offsetY <= elemBottomBound);
@@ -109,8 +110,9 @@ var Helpers = {
       scroller.register(this.props.name, domNode);
       if (__deferredScrollDestination === this.props.name) {
         window.setTimeout(function(){
-            scroller.scrollTo(__deferredScrollDestination);
+            scroller.scrollTo(__deferredScrollDestination, false, 0, __deferredScrollOffset);
             __deferredScrollDestination = '';
+            __deferredScrollOffset = 0;
         });
       }
     },
@@ -120,8 +122,9 @@ var Helpers = {
   },
 
   DeferredScroll: {
-    deferredScrollTo: function(desination) {
+    deferredScrollTo: function(desination, offset) {
         __deferredScrollDestination = desination;
+        __deferredScrollOffset = offset || 0;
     }
   }
 };
