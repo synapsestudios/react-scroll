@@ -1,0 +1,41 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'examples' ]
+2 info using npm@3.3.3
+3 info using node@v0.12.7
+4 verbose run-script [ 'preexamples', 'examples', 'postexamples' ]
+5 info lifecycle @synapsestudios/react-scroll@0.3.3~preexamples: @synapsestudios/react-scroll@0.3.3
+6 silly lifecycle @synapsestudios/react-scroll@0.3.3~preexamples: no script for preexamples, continuing
+7 info lifecycle @synapsestudios/react-scroll@0.3.3~examples: @synapsestudios/react-scroll@0.3.3
+8 verbose lifecycle @synapsestudios/react-scroll@0.3.3~examples: unsafe-perm in lifecycle true
+9 verbose lifecycle @synapsestudios/react-scroll@0.3.3~examples: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/kyle/VMs/react-scroll/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle @synapsestudios/react-scroll@0.3.3~examples: CWD: /Users/kyle/VMs/react-scroll
+11 silly lifecycle @synapsestudios/react-scroll@0.3.3~examples: Args: [ '-c',
+11 silly lifecycle   'webpack-dev-server --config examples/webpack.config.js --no-info --content-base' ]
+12 silly lifecycle @synapsestudios/react-scroll@0.3.3~examples: Returned: code: 1  signal: null
+13 info lifecycle @synapsestudios/react-scroll@0.3.3~examples: Failed to exec examples script
+14 verbose stack Error: @synapsestudios/react-scroll@0.3.3 examples: `webpack-dev-server --config examples/webpack.config.js --no-info --content-base`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
+14 verbose stack     at EventEmitter.emit (events.js:110:17)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at ChildProcess.emit (events.js:110:17)
+14 verbose stack     at maybeClose (child_process.js:1015:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+15 verbose pkgid @synapsestudios/react-scroll@0.3.3
+16 verbose cwd /Users/kyle/VMs/react-scroll
+17 error Darwin 15.0.0
+18 error argv "node" "/usr/local/bin/npm" "run" "examples"
+19 error node v0.12.7
+20 error npm  v3.3.3
+21 error code ELIFECYCLE
+22 error @synapsestudios/react-scroll@0.3.3 examples: `webpack-dev-server --config examples/webpack.config.js --no-info --content-base`
+22 error Exit status 1
+23 error Failed at the @synapsestudios/react-scroll@0.3.3 examples script 'webpack-dev-server --config examples/webpack.config.js --no-info --content-base'.
+23 error This is most likely a problem with the @synapsestudios/react-scroll package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     webpack-dev-server --config examples/webpack.config.js --no-info --content-base
+23 error You can get their info via:
+23 error     npm owner ls @synapsestudios/react-scroll
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

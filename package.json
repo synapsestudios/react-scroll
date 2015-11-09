@@ -8,7 +8,7 @@
     "url": "https://github.com/synapsestudios/react-scroll.git"
   },
   "scripts": {
-    "examples": "webpack-dev-server --config examples/webpack.config.js --no-info --content-base examples"
+    "examples": "webpack-dev-server --config examples/webpack.config.js --no-info --content-base"
   },
   "authors": [
     "Joachim Karlsson",
@@ -27,15 +27,15 @@
     "scrolls"
   ],
   "devDependencies": {
-    "babel-core": "^4.6.0",
-    "babel-loader": "^4.0.0",
+    "babel-core": "^6.1.0",
+    "babel-loader": "^6.1.0",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
-    "react": ">=0.13.0",
-    "webpack": "^1.6.0",
-    "webpack-dev-server": "^1.7.0"
+    "webpack-dev-server": "1.12.1",
+    "webpack-error-notification": "0.1.4"
   },
   "dependencies": {
-    "react-dom": "^0.14.0-beta3"
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
   }
 }
