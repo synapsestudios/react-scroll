@@ -106,8 +106,7 @@ var Helpers = {
       name: React.PropTypes.string.isRequired
     },
     componentDidMount: function() {
-      var domNode = this.findDOMNode ? this.findDOMNode() : ReactDOM.findDOMNode(this);
-      scroller.register(this.props.name, domNode);
+      scroller.register(this.props.name, ReactDOM.findDOMNode(this));
       if (__deferredScrollDestination === this.props.name) {
         window.setTimeout(function(){
             scroller.scrollTo(__deferredScrollDestination, false, 0, __deferredScrollOffset);
