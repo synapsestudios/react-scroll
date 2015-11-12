@@ -3,6 +3,8 @@
 Directive for basic scrolling and smooth scrolling.
 Forked from https://github.com/fisshy/react-scroll to give us tighter control over npm and git release versions. We'll peridocially pull updates and will submit PRs for any bugfixes we find.
 
+Requires React 14, for React 13 or below, use `0.3.3`
+
 ### Install
 ```js
 $ npm install @synapsestudios/react-scroll
