@@ -69,11 +69,11 @@ var Helpers = {
         scrollSpy.addSpyHandler((function(y) {
 
           if(! element) {
+            if (scroller.get(to)) {
               element = scroller.get(to);
-          }
-
-          if (! element) {
-            return;
+            } else {
+              return;
+            }
           }
 
           var cords = element.getBoundingClientRect();
@@ -97,6 +97,10 @@ var Helpers = {
             scrollSpy.updateStates();
           }
         }).bind(this));
+
+        if (scroller.getActiveLink() === this.props.to) {
+          this.setState({ active : true });
+        }
       }
     },
     componentWillUnmount: function() {
