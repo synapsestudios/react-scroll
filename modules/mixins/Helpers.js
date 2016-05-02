@@ -97,6 +97,10 @@ var Helpers = {
             scrollSpy.updateStates();
           }
         }).bind(this));
+
+        if (scroller.getActiveLink() === this.props.to) {
+          this.setState({ active : true });
+        }
       }
     },
     componentWillUnmount: function() {
