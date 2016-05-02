@@ -68,8 +68,12 @@ var Helpers = {
 
         scrollSpy.addSpyHandler((function(y) {
 
-          if(!element) {
+          if(! element) {
               element = scroller.get(to);
+          }
+
+          if (! element) {
+            return;
           }
 
           var cords = element.getBoundingClientRect();
@@ -114,6 +118,7 @@ var Helpers = {
             __deferredScrollOffset = 0;
         });
       }
+      scrollSpy.scrollHandler();
     },
     componentWillUnmount: function() {
       scroller.unregister(this.props.name);
