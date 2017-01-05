@@ -11,7 +11,8 @@ var Link = React.createClass({
   },
   getDefaultProps: function() {
     return {
-      className: ""
+      className: "",
+      tabIndex: 0
     };
   },
   render: function () {
@@ -21,7 +22,7 @@ var Link = React.createClass({
     var props = {
       onClick : this.onClick,
       className : [this.props.className, activeClass].join(" ").trim(),
-      tabIndex : this.props.tabIndex || 0
+      tabIndex : this.props.tabIndex
     };
 
     return React.DOM.a(props, this.props.children);
