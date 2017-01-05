@@ -19,8 +19,9 @@ var Link = React.createClass({
     var activeClass = this.state.active ? (this.props.activeClass || "active") : "";
 
     var props = {
-      onClick: this.onClick,
-      className : [this.props.className, activeClass].join(" ").trim()
+      onClick : this.onClick,
+      className : [this.props.className, activeClass].join(" ").trim(),
+      tabIndex : this.props.tabIndex || 0
     };
 
     return React.DOM.a(props, this.props.children);
