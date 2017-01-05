@@ -6,6 +6,9 @@ var animateScroll = require('./animate-scroll');
 var scrollSpy = require('./scroll-spy');
 var scroller = require('./scroller');
 
+var __deferredScrollDestination = '';
+var __deferredScrollOffset = 0;
+
 var Helpers = {
 
   Scroll: {
@@ -65,14 +68,17 @@ var Helpers = {
 
         scrollSpy.addSpyHandler((function(y) {
 
-          if(!element) {
+          if(! element) {
+            if (scroller.get(to)) {
               element = scroller.get(to);
-
-              var cords = element.getBoundingClientRect();
-              elemTopBound = (cords.top + y);
-              elemBottomBound = elemTopBound + cords.height;
+            } else {
+              return;
+            }
           }
 
+          var cords = element.getBoundingClientRect();
+          elemTopBound = Math.floor(cords.top + y);
+          elemBottomBound = elemTopBound + cords.height;
           var offsetY = y - this.props.offset;
           var isInside = (offsetY >= elemTopBound && offsetY <= elemBottomBound);
           var isOutside = (offsetY < elemTopBound || offsetY > elemBottomBound);
@@ -91,6 +97,10 @@ var Helpers = {
             scrollSpy.updateStates();
           }
         }).bind(this));
+
+        if (scroller.getActiveLink() === this.props.to) {
+          this.setState({ active : true });
+        }
       }
     },
     componentWillUnmount: function() {
@@ -105,9 +115,24 @@ var Helpers = {
     },
     componentDidMount: function() {
       scroller.register(this.props.name, ReactDOM.findDOMNode(this));
+      if (__deferredScrollDestination === this.props.name) {
+        window.setTimeout(function(){
+            scroller.scrollTo(__deferredScrollDestination, false, 0, __deferredScrollOffset);
+            __deferredScrollDestination = '';
+            __deferredScrollOffset = 0;
+        });
+      }
+      scrollSpy.scrollHandler();
     },
     componentWillUnmount: function() {
       scroller.unregister(this.props.name);
+    }
+  },
+
+  DeferredScroll: {
+    deferredScrollTo: function(desination, offset) {
+        __deferredScrollDestination = desination;
+        __deferredScrollOffset = offset || 0;
     }
   }
 };

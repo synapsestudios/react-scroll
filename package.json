@@ -1,6 +1,6 @@
 {
   "name": "@synapsestudios/react-scroll",
-  "version": "0.4.2",
+  "version": "1.0.3",
   "description": "A scroll component for React.js",
   "main": "modules",
   "repository": {
@@ -34,8 +34,9 @@
     "webpack-dev-server": "1.12.1",
     "webpack-error-notification": "0.1.4"
   },
-  "dependencies": {
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2"
-  }
+  "peerDependencies": {
+    "react": ">=0.14.4",
+    "react-dom": ">=0.14.4"
+  },
+  "dependencies": {}
 }
