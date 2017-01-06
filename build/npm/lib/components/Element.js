@@ -1,7 +1,6 @@
 "use strict";
 
 var React = require('react');
-var assign = require('react/lib/Object.assign');
 var Helpers = require('../mixins/Helpers');
 
 var Element = React.createClass({
@@ -13,9 +12,9 @@ var Element = React.createClass({
 
     var className = this.props.className || "";
 
-    var props = assign({}, this.props, {
+    var props = {
       className: this.props.className
-    });
+    };
 
     return React.DOM.div(props, this.props.children);
   }
