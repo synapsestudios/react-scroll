@@ -10,9 +10,9 @@ var Button = React.createClass({
     return { active : false};
   },
   render: function () {
-    var props = assign({}, this.props, {
+    var props = 
       onClick: this.onClick
-    });
+    };
 
     return React.DOM.input(props, this.props.children);
   }
