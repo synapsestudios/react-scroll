@@ -116,7 +116,7 @@ var Helpers = {
     componentDidMount: function() {
       scroller.register(this.props.name, ReactDOM.findDOMNode(this));
       if (__deferredScrollDestination === this.props.name) {
-        window.setTimeout(function(){
+        this.timeout = window.setTimeout(function(){
             scroller.scrollTo(__deferredScrollDestination, false, 0, __deferredScrollOffset);
             __deferredScrollDestination = '';
             __deferredScrollOffset = 0;
@@ -126,6 +126,7 @@ var Helpers = {
     },
     componentWillUnmount: function() {
       scroller.unregister(this.props.name);
+      window.clearTimeout(this.timeout);
     }
   },
 

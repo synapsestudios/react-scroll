@@ -1,7 +1,6 @@
 "use strict";
 
 var React = require('react');
-var assign = require('react/lib/Object.assign');
 var Helpers = require('../mixins/Helpers');
 
 var Button = React.createClass({
@@ -10,7 +9,7 @@ var Button = React.createClass({
     return { active : false};
   },
   render: function () {
-    var props = 
+    var props = {
       onClick: this.onClick
     };
 
